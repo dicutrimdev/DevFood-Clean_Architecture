@@ -15,11 +15,12 @@ public class RegisterUserService implements RegisterUserUseCase {
     }
 
     @Override
-    public void execute(RegisterUserInput input) {
+    public User execute(RegisterUserInput input) {
         if (userRepository.existsByEmail(input.email()))
             throw new IllegalArgumentException("Email already in use.");
         String id = UUID.randomUUID().toString();
         User user = new User(id, input.name(), input.email(), input.passwordHash());
         userRepository.save(user);
+        return user;
     }
 }

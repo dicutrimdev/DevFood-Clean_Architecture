@@ -1,7 +1,8 @@
 package com.domain.devfood.application.service;
 
 import com.domain.devfood.application.dto.RegisterUserInput;
+import com.domain.devfood.domain.model.User;
 
 public interface RegisterUserUseCase {
-    void execute(RegisterUserInput input);
+    User execute(RegisterUserInput input);
 }

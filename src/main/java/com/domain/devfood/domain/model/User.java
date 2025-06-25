@@ -11,9 +11,6 @@ public class User {
 
     public User(String id, String name, String email, String passwordHash) {
 
-        if (id == null || id.isBlank())
-            throw new IllegalArgumentException("Id cannot be null or blank");
-
         if (name == null || name.isBlank())
             throw new IllegalArgumentException("Name cannot be null or blank");
 
